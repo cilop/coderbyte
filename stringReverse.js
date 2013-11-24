@@ -9,3 +9,8 @@ function FirstReverse(str) {
   return ans; 
          
 }
+
+function SecondReverse(str){
+//now we're talking
+  return str.split('').reverse().join('');
+}
