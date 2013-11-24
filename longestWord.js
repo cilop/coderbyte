@@ -1,8 +1,8 @@
 function LongestWord(sen) { 
-
+//todo: implement ignore punctiation!
   var words = sen.split(' ');
   var winner = '';
-  //var alpha = 'abcdefghijklmopqrstuvwxyz';
+
   
   for (var i = 0 ; i < words.length; i ++)
   {
