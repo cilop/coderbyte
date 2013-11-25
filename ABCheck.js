@@ -13,8 +13,5 @@ function ABCheck(str) {
     return true
   else
     return false
-  
-  
-  return str; 
          
 }
