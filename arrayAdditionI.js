@@ -13,12 +13,10 @@ function ArrayAdditionI(arr) {
   
   for (var i = 0;i<arr.length;i++)
   {
-    console.log(suma);
     suma = suma + arr[i];
     if (suma >= max) {return true}
   }
   
-  console.log(suma)
   return false; 
          
 }
