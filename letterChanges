@@ -1,0 +1,24 @@
+function LetterChanges(str) { 
+
+  var arr = str.split('');
+  var aux;
+  var vow = 'aeiou';
+  
+  for (var i = 0; i < arr.length ; i++)
+  {
+    aux = arr[i].charCodeAt(0);
+    if (aux >= 65 && aux<=122)
+    {
+        aux ++;
+    }
+    arr[i] = String.fromCharCode(aux);
+    
+    if (vow.search(arr[i]) != -1)
+    {
+      arr[i] = arr[i].toUpperCase();
+    }
+  }
+  
+  return arr.join(''); 
+         
+}
