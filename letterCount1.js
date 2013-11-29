@@ -8,40 +8,42 @@
 
 function LetterCountI(str) { 
 
-  var words = str.split(' ');
-  //console.log(words);
-  var winner = -1;
-  var word;
-  var counting = 0;
-  var max = 0;
-  
-  for (var i = 0;i<words.length;i++)
-  {
-    word = words[i];
-    word = word.split('').sort().join('');
-    word = word + '@';
-    //console.log(word)
-    for (var j = 0;j<word.length-1;j++)
-    {
-      //console.log(word.charAt(j))
-      if (word.charAt(j).toLowerCase() == word.charAt(j+1).toLowerCase())
-      {
-         // console.log('im in');
-        counting = 1 + counting;
-      }
-    }
-      if (counting > max)
-      {
-        max = counting + 1;
-        counting = 0;
-        winner = words[i];
-      }
-      //console.log(counting)
-    }
+function LetterCountI(str) 
+
+{
+    //to use in sort() array by length
+    function sortL(a,b){return b.length - a.length}
+
+var arr = str.split(' ');
+
+//order words alphabetically
+for (var j = 0;j<arr.length;j++)
+{
+    arr[j] = arr[j].split('').sort().join('');
+}
+
+
+var max = 0;
+var ans = -1;
+var auxarr;
+
+//match longest pattern of repeated characters in every word, save index
+//of winning word in 'ans'
+for (var i = 0;i<arr.length;i++)
+{
+    auxarr = arr[i].match(/([a-z])\1+/ig);
     
-      
-      
-  
-  return winner; 
-         
+    if (auxarr){
+    if (auxarr.sort(sortL)[0].length > max)
+    {
+        max = arr[i].match(/([a-z])\1+/ig).sort(sortL)[0].length;
+        ans = i;
+    }
+    }
+}
+    //re create original array of words and return winning word, or return -1
+    if (ans != -1)
+    return str.split(' ')[ans];
+    else
+    return ans
 }
