@@ -6,12 +6,11 @@
 
 function ABCheck(str) { 
 
-  re = /[a][a-z ][a-z ][a-z ][b]/g
-  re2 = /[b][a-z ][a-z ][a-z ][a]/g
-    
-  if (str.search(re) != -1 || str.search(re2) != -1)
+  
+  if (str.match(/[ab][\w ][\w ][\w ][ba]/))
     return true
   else
     return false
+
          
 }
