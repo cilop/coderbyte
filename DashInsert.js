@@ -2,25 +2,26 @@
 
 function DashInsert(num) { 
 
-  var arr = (num+"").split('');
-  var ans = [];
   
-  for (var i = 0;i<arr.length;i++)
+  var arr = [];
+  num = num + '';
+  
+  for (var i = 0;i<num.length;i++)
   {
-    if (arr[i]%2 !== 0 && arr[i+1]%2 !== 0)
+    if (parseInt(num[i]) % 2 == 1 && parseInt(num[i+1])%2 == 1)
     {
-      ans.push(arr[i]);
-      ans.push('-');
+      arr.push(num[i]);
+      arr.push('-');
     }
     else
     {
-      ans.push(arr[i]);
+      arr.push(num[i]);
     }
   }
   
-  if (ans[ans.length-1] == '-')
-  ans.pop();
+ // if (arr[0] == '-')
+  //  arr.shift();
   
-  return ans.join(''); 
+  return arr.join(''); 
          
 }
