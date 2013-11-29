@@ -6,17 +6,19 @@
 
 function ArrayAdditionI(arr) { 
 
-  arr = arr.sort(function(a,b){return a-b});
-  var max = arr[arr.length-1];
-  arr.pop();
-  var suma = 0;
+  arr.sort(function (a,b) {return a - b });
+  var sum = 0;
   
-  for (var i = 0;i<arr.length;i++)
+  for (var i = 0;i<arr.length-1;i++)
   {
-    suma = suma + arr[i];
-    if (suma >= max) {return true}
+    sum = sum + arr[i];
   }
   
-  return false; 
+  if (sum >= arr[arr.length-1])
+    return true;
+  else
+    return false;
+  
+  return arr; 
          
 }
