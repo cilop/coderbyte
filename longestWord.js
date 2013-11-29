@@ -1,17 +1,18 @@
 function LongestWord(sen) { 
-//todo: implement ignore punctiation!
-  var words = sen.split(' ');
-  var winner = '';
 
+  var arr = sen.match(/\w+/ig);
+  var winner = 0;
+  var winnerWord;
   
-  for (var i = 0 ; i < words.length; i ++)
+  for (var i = 0; i < arr.length;i++)
   {
-    if (words[i].length > winner.length)
+    if (arr[i].length > winner)
     {
-      winner = words[i];
+      winnerWord = arr[i];
+      winner = arr[i].length;
     }
   }
   
-  return winner; 
+  return winnerWord; 
          
 }
