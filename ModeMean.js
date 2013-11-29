@@ -8,35 +8,26 @@
 
 function MeanMode(arr) { 
 
-  var current = 0;
-  var max = 0;
+  var str = arr.sort(function (a,b) {return b - a}).join('.');
   var mode;
-  var mean = 0;
-  
-
+  try{
+    mode = parseInt(str.match(/([0-9][.])\1+/ig)[0].match(/[0-9]/)[0]);}
+  catch (err){
+    return 0}
+  var mean;
+  var sum = 0;
   
   for (var i = 0;i<arr.length;i++)
   {
-
-    mean = mean + arr[i];
-    if (arr[i] == arr[i+1])
-    {
-        current++;
-        if (current > max)
-        {
-            max = current;
-            current = 0;
-            mode = arr[i];
-        }
-    }
+    sum = sum + arr[i];
   }
   
-  mean = mean / arr.length ;
+  mean = sum / arr.length;
   
-  if (mode == mean)
-  {return 1}
-  else
-  {return 0}
-  //return arr; 
+  if (mean == mode)
+    return 1
+   else
+     return 0
+ 
          
 }
