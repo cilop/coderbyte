@@ -5,9 +5,6 @@
 //also has 2 e's. If there are no words with repeating letters return -1. 
 //Words will be separated by spaces.
 
-
-function LetterCountI(str) { 
-
 function LetterCountI(str) 
 
 {
